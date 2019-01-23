@@ -24,9 +24,6 @@ common_host() {
   if [[ -n $me ]]; then
     echo "%{$fg[green]%}$me%{$reset_color%}:"
   fi
-  if [[ $AWS_VAULT ]]; then
-    echo "%{$fg[yellow]%}$AWS_VAULT%{$reset_color%} "
-  fi
 }
 
 # Current directory
