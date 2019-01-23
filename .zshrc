@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$HOME/dotfiles/zsh/custom"
 ZSH_THEME="myazur"
 HIST_STAMPS="dd.mm.yyyy"
-plugins=(git sudo tmux systemd dirhistory zsh-autosuggestions)
+plugins=(git sudo tmux systemd dirhistory)
 
 # DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
