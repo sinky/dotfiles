@@ -8,7 +8,7 @@ COMMON_PROMPT_SYMBOL="❯"
 PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
 
 # Right Prompt
-RPROMPT='$(common_git_status)'
+RPROMPT='$(git_prompt_info)'
 
 # Prompt with current SHA
 # PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
@@ -46,32 +46,6 @@ fi
 common_return_status() {
   echo -n "%(?.%F{008}.%F{red})$COMMON_PROMPT_SYMBOL%f "
 }
-
-# Git status
-common_git_status() {
-    local message=""
-    local message_color="%F{green}"
-
-    local staged=$(git status --porcelain 2>/dev/null | grep -e "^M " -e "^A ")
-    local unstaged=$(git status --porcelain 2>/dev/null | grep -e "^ M" -e "^??")
-
-    if [[ -n ${staged} ]]; then
-        message_color="%F{red}"
-    elif [[ -n ${unstaged} ]]; then
-        message_color="%F{yellow}"
-    fi
-
-    local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-    if [[ -n ${branch} ]]; then
-        message+="${message_color}${branch}%f"
-    fi
-
-    echo -n "${message}"
-}
-
-# Git prompt SHA
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{green}%}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%} "
 
 # Background Jobs
 common_bg_jobs() {
