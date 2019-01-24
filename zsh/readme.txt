@@ -22,9 +22,3 @@ systemd
 
 dirhistory
 ALT+Pfeiltasten (Links/Rechts: cwd; Hoch/Runter: Hierarchie)
-
-zsh-autosuggestions
-Vorschläge aus History, mit Pfeiltaste rechts completen
-https://github.com/zsh-users/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
