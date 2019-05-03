@@ -19,6 +19,7 @@ fi
 
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
+alias ll="l"
 
 # List all files colorized in long format, excluding . and ..
 alias la="ls -lAF ${colorflag}"
